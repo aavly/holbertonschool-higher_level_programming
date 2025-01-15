@@ -7,3 +7,6 @@ print("{} arguments:".format(totalArgs - 1))
 
 for i in range(1, totalArgs):
     print("{}: {}".format(i, sys.argv[i]))
+
+if __name__ == "__main__":
+    pass
