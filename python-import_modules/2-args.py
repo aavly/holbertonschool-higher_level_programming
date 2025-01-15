@@ -4,7 +4,7 @@ import sys
 
 totalArgs = len(sys.argv)
 if totalArgs == 1:
-    print("{} arguments:".format(totalArgs - 1))
+    print("0 arguments.")
 elif totalArgs == 2:
     print("{} argument:".format(totalArgs - 1))
 else:
