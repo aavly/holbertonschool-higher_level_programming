@@ -4,4 +4,3 @@ def print_list_integer(my_list=[]):
     listLength = len(my_list)
     for i in range(listLength):
         print("{:d}".format(my_list[i]))
-
