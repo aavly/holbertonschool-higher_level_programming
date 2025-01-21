@@ -2,14 +2,9 @@
 
 def best_score(a_dictionary):
 
-    if a_dictionary == None:
+    if not a_dictionary:
         return None
 
-    # access first key and assign to biggest
-    biggest = next(iter(a_dictionary.values()))
+    biggest_key = max(a_dictionary, key=a_dictionary.get())
 
-    for key in a_dictionary:
-        if a_dictionary[key] > biggest:
-            biggest = a_dictionary
-
-    return a_dictionary.get(biggest)
+    return biggest_key
