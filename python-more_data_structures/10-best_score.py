@@ -12,4 +12,4 @@ def best_score(a_dictionary):
         if a_dictionary[key] > biggest:
             biggest = a_dictionary
 
-    return biggest
+    return a_dictionary.get(biggest)
