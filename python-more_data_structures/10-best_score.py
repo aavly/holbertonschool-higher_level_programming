@@ -2,7 +2,11 @@
 
 def best_score(a_dictionary):
 
-    biggest = None
+    if len(a_dictionary) < 1:
+        return None
+
+    # access first key and assign to biggest
+    biggest = next(iter(a_dictionary))
 
     for key in a_dictionary:
         if a_dictionary[key] > biggest:
