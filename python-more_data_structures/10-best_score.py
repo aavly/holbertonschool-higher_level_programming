@@ -2,7 +2,7 @@
 
 def best_score(a_dictionary):
 
-    if len(a_dictionary) < 1:
+    if a_dictionary == None:
         return None
 
     # access first key and assign to biggest
