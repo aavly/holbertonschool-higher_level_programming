@@ -4,7 +4,7 @@ def safe_print_list(my_list=[], x=0):
 
     try:
         for i in range(x):
-            print(my_list[i], end="")
+            return print(my_list[i], end="")
     except IndexError as e:
         print(e)
         print("The list isn't that big!")
@@ -14,3 +14,4 @@ def safe_print_list(my_list=[], x=0):
     except Exception as e:
         print(e)
         print("Whomp whomp, an error occurred.")
+
