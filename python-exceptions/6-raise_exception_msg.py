@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 
-def raise_exception_msg():
+def raise_exception_msg(message=""):
 
-    raise NameError("this is a msg")
+    raise NameError(message)
