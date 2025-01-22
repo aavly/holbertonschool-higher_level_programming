@@ -2,8 +2,15 @@
 
 def safe_print_list(my_list=[], x=0):
 
-    for i in range(x):
-        try:
-            print(my_list[i])
-        except IndexError:
-            print("Whomp whomp, an error occurred.")
+    try:
+        for i in range(x):
+            print(my_list[i], end="")
+    except IndexError as e:
+        print(e)
+        print("The list isn't that big!")
+    except ValueError as e:
+        print(e)
+        print("Enter only numbers please")
+    except Exception as e:
+        print(e)
+        print("Whomp whomp, an error occurred.")
