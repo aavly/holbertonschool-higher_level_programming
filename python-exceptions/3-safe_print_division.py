@@ -1,18 +1,14 @@
 #!/usr/bin/python3
 
-def safe_print_list_integers(my_list=[], x=0):
+def safe_print_division(a, b):
 
-    printed_elements = 0
-    
-    for i in range(x):
-        try:
-            print("{:d}".format(my_list[i]), end="")
-            printed_elements += 1
-        except (ValueError, TypeError):
-            continue
-        except IndexError:
-            break
-        
-    print("")
+    quotient = 0
 
-    return printed_elements
+    try:
+        quotient = a / b
+    except ZeroDivisionError:
+        return None
+    finally:
+        print(quotient)
+
+    return quotient
