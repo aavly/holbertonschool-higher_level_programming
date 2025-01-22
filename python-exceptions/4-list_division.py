@@ -20,7 +20,7 @@ def list_division(my_list_1, my_list_2, list_length):
         except IndexError:
             print("out of range")
             new_list.append(0)
-            break
+            continue
         finally:
             print(end="")
 
