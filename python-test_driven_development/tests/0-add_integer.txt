@@ -1,0 +1,75 @@
+========================
+The ``add_integer`` module
+========================
+
+Using ``add_integer``
+.....................
+
+
+First import ``add_integer`` from the ``0-add_integer`` file:
+==============================================================
+    >>> add = __import__('0-add_integer').add_integer
+
+
+Tests:
+======
+
+Numbers:
+========
+
+Test case #1: Two integers
+
+    >>> add(1, 2)
+    3
+
+Test case #2: Two floats
+
+    >>> add(3.4, 1.2)
+    4
+
+Test case #3: One integer, one float
+
+	>>> add(1, 2.2)
+	3
+
+Test case #4: One float, one integer
+
+	>>> add(1.1, 2)
+	3
+
+Test case #4: Two negative floats
+
+	>>> add(-1.1, -2.2)
+	-3
+
+Test case #5: Float and a negative int
+
+	>>> add(1.1, -2)
+	-1
+
+
+Non-numbers:
+============
+
+Test case #0: No parameters
+
+>>> add()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test case #1: Argument with no assigned value
+
+    >>> add(a, 123)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Test case #2: Using default value of parameter 'b'
+
+    >>> add(5)
+    103
+
+Test case #3: A test case for using the default value of parameter 'b'
+with the float parameter 'a'
+
+    >>> add(1.0, )
+    99
