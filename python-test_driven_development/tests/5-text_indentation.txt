@@ -39,8 +39,8 @@ Test case #1: text is not a string
     >>> text_indentation(12)
     Traceback (most recent call last):
         ...
-    TypeError:	text must be a string
+    TypeError: text must be a string
 
 Test case #2: no text
 	>>> text_indentation("")
-	<BLANKLINE>
+	
