@@ -36,7 +36,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_string(self):
         ## returns char with highest ASCII value
         string = "String"
-        self.assertEqual(max_integer(string), 'r')
+        self.assertEqual(max_integer(string), 't')
 
     def test_empty_string(self):
         self.assertEqual(max_integer(""), None)
