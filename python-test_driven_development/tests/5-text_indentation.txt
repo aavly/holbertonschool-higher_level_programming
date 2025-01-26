@@ -18,13 +18,11 @@ Valid inputs:
 Test case #1: text is a string
 
     >>> text_indentation("string, string")
-    string
-
-	string
+    string, string
 
 Test case #2: text includes just symbols
 
-    >>> text_indentation(", ? :)
+    >>> text_indentation(", ? :")
 	,
 
 	?
@@ -43,4 +41,4 @@ Test case #1: text is not a string
 
 Test case #2: no text
 	>>> text_indentation("")
-	
+
