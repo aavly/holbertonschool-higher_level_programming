@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Text-indentation function."""
 
 def text_indentation(text):
     """
@@ -6,10 +7,6 @@ def text_indentation(text):
 
     Args:
         text: text to check for characters
-
-    Returns:
-        Text with according new lines.
-
     Raises:
         TypeError:	text must be a string.
     """
@@ -21,8 +18,9 @@ def text_indentation(text):
     for char in text:
         newText += char
         if char in ['.', '?', ':']:
-            result += "\n\n"
-    print(newText.strip)
+            newText += "\n\n"
+
+    print(newText.strip())
 
 
 if __name__ == "__main__":
