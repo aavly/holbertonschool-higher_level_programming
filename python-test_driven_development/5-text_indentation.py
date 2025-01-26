@@ -24,7 +24,7 @@ def text_indentation(text):
             newText += "\n\n"
             skipSpace = True
         elif skipSpace and char == " ":
-            result = result[:-1]
+            newText = newText[:-1]
         else:
             skipSpace = False
 
