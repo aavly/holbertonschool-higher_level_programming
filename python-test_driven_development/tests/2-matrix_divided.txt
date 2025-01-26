@@ -86,3 +86,20 @@ Test case #4: Divisor is not a number
     >>> matrix_divided(matrix, div)
     Traceback (most recent call last):
     TypeError: div must be a number
+
+Test case #5: Missing one argument
+
+	>>> matrix = [[4, 8]]
+	>>> div = 2
+    >>> matrix_divided(matrix, div)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Test case #5: Missing two arguments 
+
+	>>> matrix = []
+	>>> div = 2
+    >>> matrix_divided(matrix, div)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats

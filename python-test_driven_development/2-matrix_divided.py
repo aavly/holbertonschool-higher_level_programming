@@ -10,7 +10,8 @@ def matrix_divided(matrix, div):
         div: number (int or float) to divide numbers by.
 
     Returns:
-        A new matrix with the elements divided by `div`, rounded to 2 decimal places.
+        A new matrix with the elements divided by `div`,
+        rounded to 2 decimal places.
 
     Raises:
         TypeError:  If a matrix is not a list of lists of integers/floats
@@ -43,4 +44,3 @@ def matrix_divided(matrix, div):
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/2-matrix_divided.txt")
-    
