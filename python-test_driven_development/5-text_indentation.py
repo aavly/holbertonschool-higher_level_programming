@@ -16,13 +16,19 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     newText = ""
+    skipSpace = False
+
     for char in text:
         newText += char
         if char in ['.', '?', ':']:
             newText += "\n\n"
+            skipSpace = True
+        elif skipSpace and char == " ":
+            result = result[:-1]
+        else:
+            skipSpace = False
 
-    newText = newText.strip()
-    print(newText, end="")
+    print(newText.strip(), end="")
 
 
 if __name__ == "__main__":
