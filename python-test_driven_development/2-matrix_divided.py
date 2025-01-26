@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Divided matrix function"""
+
 
 def matrix_divided(matrix, div):
     """
