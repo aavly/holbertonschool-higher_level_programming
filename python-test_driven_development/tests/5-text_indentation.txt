@@ -24,8 +24,8 @@ Test case #2: text includes just symbols
 
     >>> text_indentation(", ? :")
 	, ?
-    <BLANKLINE>
-    :
+	<BLANKLINE>
+	:
 
 Invalid Inputs:
 ===============
