@@ -22,7 +22,7 @@ def text_indentation(text):
         newText += char
         if char in ['.', '?', ':']:
             result += "\n\n"
-    print(newText)
+    print(newText.strip)
 
 
 if __name__ == "__main__":
