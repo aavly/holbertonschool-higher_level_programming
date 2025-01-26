@@ -23,11 +23,9 @@ Test case #1: text is a string
 Test case #2: text includes just symbols
 
     >>> text_indentation(", ? :")
-	,
-
-	?
-
-	:
+	, ?
+    <BLANKLINE>
+    :
 
 Invalid Inputs:
 ===============
