@@ -7,5 +7,4 @@ class Square:
     This is an empty class to define a square
 
     """
-    def __init__(self):
-        pass
+    pass
