@@ -19,10 +19,14 @@ class Square:
     def __init__(self, size=0):
         self.__size = size
 
+    def area(self):
+        """ Public instance method that returns the current square area"""
+        sq_area = pow(self.__size, 2)
+        return sq_area
+
     # Getter
     @property
     def size(self):
-        print("Retrieving Square Size...")
         return self.__size
 
     # Setter
