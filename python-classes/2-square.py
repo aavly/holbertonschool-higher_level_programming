@@ -9,7 +9,7 @@ class Square:
     Private instance attribute: size
 
     Raises:
-         TypeError: size must be an integer
+        TypeError: size must be an integer
         ValueError: size must be >= 0
     """
     # Instantiation with optional size
