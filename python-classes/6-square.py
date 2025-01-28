@@ -20,13 +20,34 @@ class Square:
         ValueError: size must be >= 0
     """
 
+
+class Square:
+    """
+    Class to define a Square based on 4-square.py
+
+    Private instance attribute: size
+        property def size(self) to retrieve it - getter
+        property def size (self, value) - setter
+
+    Raises:
+        TypeError: size must be an integer
+        ValueError: size must be >= 0
+    """
+
     # Instantiation with optional size
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self.size = size
+        if not isinstance(position, tuple) or len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        for i in range(2):
+            if position[i] < 0:
+                raise TypeError(
+                    "position must be a tuple of 2 positive integers")
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """ Public instance method that returns the current square area"""
@@ -35,12 +56,18 @@ class Square:
 
     def my_print(self):
         """ Prints in stdout the square with the char # """
-        if self.size == 0:
+        if self.__size == 0:
             print()
-        else:
-            for i in range(self.size):
-                for j in range(self.size):
+        # printing spaces for y axis
+        for y in range(self.__position[1]):
+            print()
+        for i in range(self.__size):
+            #printing spaces for x axis
+            for x in range(self.__position[0]):
+                print(" ", end="")
+                for l in range(self.__size):
                     print('#', end="")
+                print()
 
     # Getter
     @property
