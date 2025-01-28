@@ -22,25 +22,12 @@ class Square:
 
     # Instantiation with optional size
     def __init__(self, size=0, position=(0, 0)):
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-
-        if not isinstance(position, tuple) or len(position) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-
-        for i in range(2):
-            if not isinstance(position[i], int) or position[i] < 0:
-                raise TypeError(
-                    "position must be a tuple of 2 positive integers")
         self.__size = size
         self.__position = position
 
     def area(self):
         """ Public instance method that returns the current square area"""
-        sq_area = pow(self.__size, 2)
-        return sq_area
+        return pow(self.__size, 2)
 
     def my_print(self):
         """ Prints in stdout the square with the char # """
@@ -66,11 +53,19 @@ class Square:
     # SETTERS
     @size.setter
     def size(self, value):
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     @position.setter
     def position(self, value):
-        self.__position = value
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
-mysquare = Square(3) 
-mysquare.my_print()
+        for i in range(2):
+            if not isinstance(value[i], int) or value[i] < 0:
+                raise TypeError(
+                    "position must be a tuple of 2 positive integers")
+        self.__position = value
