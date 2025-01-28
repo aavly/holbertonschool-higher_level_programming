@@ -46,16 +46,13 @@ class Square:
         """ Prints in stdout the square with the char # """
         if self.__size == 0:
             print()
-        # printing spaces for y axis
-        for y in range(self.__position[1]):
-            print()
-        for i in range(self.__size):
-            # printing spaces for x axis
-            for x in range(self.__position[0]):
-                print(" ", end="")
-                for j in range(self.__size):
-                    print('#', end="")
-                print()
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
 
     # GETTERS
     @property
@@ -74,3 +71,6 @@ class Square:
     @position.setter
     def position(self, value):
         self.__position = value
+
+mysquare = Square(3) 
+mysquare.my_print()
