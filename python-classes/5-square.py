@@ -24,37 +24,28 @@ class Square:
         self.size = size
 
     def area(self):
-        """Public instance method that returns the current square area"""
-        if hasattr(self, 'size'):
-            sq_area = pow(self.size, 2)
-            print("Area: {}".format(sq_area))
-        else:
-            # not quite sure how to print attribute name
-            print("'{}' object has no attribute '{}'".format(self, self.size))
+        """ Public instance method that returns the current square area"""
+        sq_area = pow(self.__size, 2)
+        return sq_area
 
     def my_print(self):
         """ Prints in stdout the square with the char # """
         if self.size == 0:
             print()
-        elif isinstance(self.size, int) and self.size > 0:
-            for i in range(self.size):
-                for j in range(self.size):
-                    print('#')
+        for i in range(self.size):
+            for j in range(self.size):
+                print('#', end="")
 
     # Getter
     @property
     def size(self):
-        print("Retrieving Square Size...")
         return self.__size
 
     # Setter
     @size.setter
     def size(self, value):
-
-        if value.isdigit():
-            self.__size = value
-        else:
-            if not isinstance(value, int):
-                raise TypeError("size must be an integer")
-            if value < 0:
-                raise ValueError("size must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value

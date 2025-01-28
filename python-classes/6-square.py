@@ -20,64 +20,38 @@ class Square:
         ValueError: size must be >= 0
     """
 
-    # Instantiation with optional size and optional position
-    def __init__(self, size=0, position=(0, 0)):
+    # Instantiation with optional size
+    def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        if position[0] < 0 or position[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
         self.size = size
-        self.position = position
 
     def area(self):
-        """Public instance method that returns the current square area"""
-        if hasattr(self, 'size'):
-            sq_area = pow(self.size, 2)
-            print("Area: {}".format(sq_area))
-        else:
-            # not quite sure how to print attribute name
-            print("'{}' object has no attribute '{}'".format(self, self.size))
+        """ Public instance method that returns the current square area"""
+        sq_area = pow(self.__size, 2)
+        return sq_area
 
     def my_print(self):
         """ Prints in stdout the square with the char # """
         if self.size == 0:
             print()
-        elif isinstance(self.size, int) and self.size > 0:
+        else:
             for i in range(self.size):
                 for j in range(self.size):
-                    print('#')
+                    print('#', end="")
 
     # Getter
     @property
     def size(self):
-        print("Retrieving Square Size...")
         return self.__size
 
     # Setter
     @size.setter
     def size(self, value):
-
-        if value.isdigit():
-            self.__size = value
-        else:
-            if not isinstance(value, int):
-                raise TypeError("size must be an integer")
-            if value < 0:
-                raise ValueError("size must be >= 0")
-
-     # Getter
-    @property
-    def position(self):
-        print("Retrieving Position Coordinates...")
-        return self.__position
-
-    # Setter
-    @position.setter
-    def position(self, value):
-
-        if value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if value.isdigit():
-            self.__position = value
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
