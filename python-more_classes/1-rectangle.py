@@ -11,13 +11,13 @@ class Rectangle:
 
     Private instance attribute: width
                                 height
-                                
+
     Raises:
         TypeError:	width must be an integer
-        			height must be an integer
-           
+                    height must be an integer
+
         ValueError: width must be >= 0
-					height must be >= 0
+                    height must be >= 0
     """
 
     def __init__(self, width=0, height=0):
