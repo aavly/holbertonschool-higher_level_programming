@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Write a class Rectangle that defines a rectangle by:
-(based on 0-rectangle.py)
+(based on 1-rectangle.py)
 """
 
 
@@ -11,13 +11,13 @@ class Rectangle:
 
     Private instance attribute: width
                                 height
-                                
+
     Raises:
         TypeError:	width must be an integer
-        			height must be an integer
-           
+                    height must be an integer
+
         ValueError: width must be >= 0
-					height must be >= 0
+                    height must be >= 0
     """
 
     def __init__(self, width=0, height=0):
@@ -59,3 +59,12 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    # Public instance methods
+    def area(self):
+        return self.__width * self.__height
+
+    def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (2 * self.__width) + (2 * self.__width)
