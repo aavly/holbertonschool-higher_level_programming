@@ -45,7 +45,7 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     def __str__(self):
-        str = ""
+        stri = ""
         newline = "\n"
 
         if self.__width == 0 or self.__height == 0:
@@ -53,10 +53,10 @@ class Rectangle:
 
         for i in range(self.__height):
             for j in range(self.__width):
-                str += self.print_symbol
+                stri += str(self.print_symbol)
             if i != self.__height - 1:
-                str += newline
-        return str
+                stri += newline
+        return stri
 
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)
