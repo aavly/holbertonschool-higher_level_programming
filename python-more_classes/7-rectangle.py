@@ -26,7 +26,7 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-    def __init__(self, width=0, height=0, ):
+    def __init__(self, width=0, height=0):
 
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
@@ -53,7 +53,7 @@ class Rectangle:
 
         for i in range(self.__height):
             for j in range(self.__width):
-                str += Rectangle.print_symbol
+                str += self.print_symbol
             if i != self.__height - 1:
                 str += newline
         return str
@@ -99,3 +99,11 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (2 * self.__width) + (2 * self.__height)
+
+
+my_rectangle_1 = Rectangle(8, 4)
+print(my_rectangle_1)
+my_rectangle_1.print_symbol = "H"
+print(my_rectangle_1)
+my_rectangle_2 = Rectangle(2, 1)
+print(my_rectangle_2)
