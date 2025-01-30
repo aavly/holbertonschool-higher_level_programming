@@ -99,11 +99,3 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (2 * self.__width) + (2 * self.__height)
-
-
-my_rectangle_1 = Rectangle(8, 4)
-print(my_rectangle_1)
-my_rectangle_1.print_symbol = "H"
-print(my_rectangle_1)
-my_rectangle_2 = Rectangle(2, 1)
-print(my_rectangle_2)
