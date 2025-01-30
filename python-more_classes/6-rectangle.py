@@ -11,7 +11,7 @@ class Rectangle:
 
     Private instance attribute: width
                                 height
-    
+
     Public class attribute: number_of_instances
 
     Raises:
