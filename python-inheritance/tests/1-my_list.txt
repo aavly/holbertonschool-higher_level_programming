@@ -42,6 +42,12 @@ Test case #3: Empty parameters
 Error causing tests:
 ====================
 
+	my_list = MyList(-3)
+	print_sorted(my_list)
+	Traceback (most recent call last):
+	...
+	TypeError: 'int' object is not iterable
+
 	my_list = MyList(3)
 	Traceback (most recent call last):
 	...
