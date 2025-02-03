@@ -6,9 +6,9 @@ Using ``MyList class``
 .....................
 
 
-First import ``print_sorted`` from the ``1-my_list.py`` file:
+First import ``MyList`` from the ``1-my_list.py`` file:
 ==============================================================
-    >>> add = __import__('1-my_list').print_sorted
+   >>> from 1_my_list import MyList
 
 
 Tests:
@@ -40,8 +40,13 @@ Test case #3: Check __str__
 
 Test case #4: Check append()
 
-	>>> add(1.1, 2)
-	3
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(2)
+	>>> my_list.print_sorted()
+	[1, 2]
+	>>> print(my_list)
+	[3, 1, 2]
 
 
 print_sorted tests
