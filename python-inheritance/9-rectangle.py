@@ -18,17 +18,9 @@ class Rectangle(BaseGeometry):
     Raises:
         Exception:	area() is not implemented
         TypeError:	<name> must be an integer
-                    height must be an integer
-                    width must be an integer
         ValueError:	<name> must be greater than 0
     """
     def __init__(self, width, height):
-
-        if not isinstance(width, int):
-            raise TypeError("width must be an integer")
-        if not isinstance(height, int):
-            raise TypeError("height must be an integer")
-
         super().integer_validator('width', width)
         super().integer_validator('height', height)
         self.__width = width
