@@ -8,7 +8,7 @@ Using ``MyList class``
 
 First import ``MyList`` from the ``1-my_list.py`` file:
 ==============================================================
-   >>> from 1_my_list import MyList
+   >>> from 1-my_list import MyList
 
 
 Tests:
