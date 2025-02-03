@@ -1,14 +1,14 @@
 ========================
-The ``my_list`` module
+Using 1-my_list.py
 ========================
 
-Using ``MyList class``
+This module defines a class ``MyList`` that inherits ``list``.
 .....................
 
 
 First import ``MyList`` from the ``1-my_list.py`` file:
 ==============================================================
-   >>> from 1-my_list import MyList
+   >>> MyList = __import__('1-my_list').MyList
 
 
 Tests:
