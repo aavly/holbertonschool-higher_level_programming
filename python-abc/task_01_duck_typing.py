@@ -55,7 +55,7 @@ def shape_info(obj):
 
 
 # Testing
-circle = Circle(radius=-5)
+circle = Circle(radius=5)
 rectangle = Rectangle(width=4, height=7)
 
 shape_info(circle)
