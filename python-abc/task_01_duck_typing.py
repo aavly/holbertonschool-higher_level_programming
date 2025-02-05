@@ -22,9 +22,7 @@ class Shape(ABC):
 class Circle(Shape):
 
     def __init__(self, radius):
-        if radius < 0:
-            raise ValueError("Positive numbers only!")
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
         return math.pi * (self.__radius**2)
@@ -36,17 +34,14 @@ class Circle(Shape):
 class Rectangle(Shape):
 
     def __init__(self, width, height):
-        if width < 0 or height < 0:
-            raise ValueError("Positive numbers only!")
-        self.__width = width
-        self.__height = height
+        self.__width = abs(width)
+        self.__height = abs(height)
 
     def area(self):
         return self.__height * self.__width
 
     def perimeter(self):
         return (2 * self.__height) + (2 * self.__width)
-
 
 
 def shape_info(obj):
