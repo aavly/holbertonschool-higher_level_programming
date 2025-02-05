@@ -1,74 +1,30 @@
-========================
-Using 1-my_list.py
-========================
+>>> MyList = __import__('1-my_list').MyList
+>>> print_sorted = MyList.print_sorted
 
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 4]
 
-First import ``MyList`` from the ``1-my_list.py`` file:
-==============================================================
-   >>> MyList = __import__('1-my_list').MyList
+>>> my_list.clear()
+>>> my_list.print_sorted()
+[]
 
+>>> my_list.append(1)
+>>> my_list.append(-2)
+>>> my_list.print_sorted()
+[-2, 1]
 
-Tests:
-=======
+>>> my_list.clear()
+>>> my_list.append("salam")
+>>> my_list.append("1")
+>>> new_list = my_list.print_sorted()
+['1', 'salam']
 
-Regular tests
-==============
+>>> print(new_list)
+None
 
-Test case #1: Check append and various prints
-
-    >>> my_list = MyList()
-	>>> my_list.append(4)
-	>>> my_list.append(2)
-	>>> my_list.append(3)
-	>>> print(my_list)
-	[4, 2, 3]
-	>>> my_list.print_sorted()
-	[2, 3, 4]
-	>>> print(my_list)
-	[4, 2, 3]
-
-Test case #2: Check inherits from list
-
-	>>> isinstance(my_list, list)
-	True
-
-Test case #3: Empty parameters
-
-	>>> my_list = MyList()
-	>>> print(my_list)
-	[]
-
-
-Error causing tests:
-====================
-
-	my_list = MyList(-3)
-	print_sorted(my_list)
-	Traceback (most recent call last):
-	...
-	TypeError: 'int' object is not iterable
-
-	my_list = MyList(3)
-	Traceback (most recent call last):
-	...
-	TypeError: 'int' object is not iterable
-
-	my_list = MyList(3.14)
-	Traceback (most recent call last):
-	...
-	TypeError: 'float' object is not iterable
-
-	my_list = MyList()
-	Traceback (most recent call last):
-	...
-	TypeError: 'NoneType' object is not iterable
-
-	>>> my_list.print_sorted([2, 3, 4, 5])
-	Traceback (most recent call last):
-	...
-	TypeError: print_sorted() takes 1 positional argument but 2 were given
-
-	>>> my_list.print_sorted((2, 3, 4, 5))
-	Traceback (most recent call last):
-	...
-	TypeError: print_sorted() takes 1 positional argument but 2 were given
+>>> print(my_list)
+['salam', '1']
