@@ -4,7 +4,6 @@ CountedIterator - Keeping Track of Iteration
 """
 
 
-
 class CountedIterator():
     """
     Class CounterIterator which keeps track of the number of items

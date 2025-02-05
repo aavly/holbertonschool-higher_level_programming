@@ -22,11 +22,12 @@ class VerboseList(list):
             print("Removed [{}] from the list".format(item))
             super().remove(item)
 
-    def pop(self, item=None):
-        if item is None:
-            to_pop = super().pop()
-            print("Popped [{}] from the list".format(item))
+    def pop(self, value=None):
+        if value is None:
+            item = super().pop()
+            print(f"Popped [{item}] from the list.")
+            return item
         else:
-            to_pop = super().pop(item)
-            print("Popped [{}] from the list".format(item))
-        return item
+            item = super().pop(value)
+            print(f"Popped [{item}] from the list.")
+            return item
