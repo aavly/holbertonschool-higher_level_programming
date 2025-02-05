@@ -22,12 +22,14 @@ class VerboseList(list):
     def remove(self, item):
         if item in self.__list:
             print("Removed {} from the list".format(item))
-            super().remove(item)
+            super().remove(list)
 
     def pop(self, item=None):
         if item in self.__list:
             print("Popped {} from the list".format(item))
             super().pop(item)
+        if len(self.__list) > 0 or item is None:
+            super().pop()
 
 # Testing
 vl = VerboseList([1, 2, 3])

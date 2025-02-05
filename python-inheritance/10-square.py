@@ -15,8 +15,8 @@ class Square(Rectangle):
 
     Raises:
         Exception:	area() is not implemented
-        TypeError:	<name> must be an integer
-        ValueError:	<name> must be greater than 0
+            TypeError:	<name> must be an integer
+            ValueError:	<name> must be greater than 0
     """
     def __init__(self, size):
         super().integer_validator('size', size)
