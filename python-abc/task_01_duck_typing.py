@@ -22,13 +22,13 @@ class Shape(ABC):
 class Circle(Shape):
 
     def __init__(self, radius):
-        self.__radius = radius
+        self.__radius = abs(radius)
 
     def area(self):
-        return abs(math.pi * (self.__radius**2))
+        return math.pi * self.__radius ** 2
 
     def perimeter(self):
-        return abs(2 * math.pi * self.__radius)
+        return 2 * math.pi * self.__radius
 
 
 class Rectangle(Shape):
@@ -41,7 +41,7 @@ class Rectangle(Shape):
         return self.__height * self.__width
 
     def perimeter(self):
-        return abs(2 * self.__height) + abs(2 * self.__width)
+        return 2 * (self.__height + self.__width)
 
 
 def shape_info(obj):
