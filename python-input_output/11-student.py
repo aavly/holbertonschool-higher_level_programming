@@ -18,4 +18,5 @@ class Student:
         return self.__dict__
 
     def reload_from_json(self, json):
-        json.load(json)
+        new_student = json.load(json)
+        return new_student
