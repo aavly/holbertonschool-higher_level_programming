@@ -12,7 +12,7 @@ response = requests.get('https://jsonplaceholder.typicode.com/')
 
 
 def fetch_and_print_posts():
-    print("Status code:" + response.status_code)
+    print("Status code:" + str(response.status_code))
 
     # if connection successful (200)
     if response.status_code == 200:
