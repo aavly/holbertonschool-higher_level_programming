@@ -13,7 +13,7 @@ API_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 def fetch_and_print_posts():
     response = requests.get(API_URL)
-    print("Status code:", response.status_code)
+    print("Status Code:", response.status_code)
 
     # if connection successful (200)
     if response.status_code == 200:
@@ -23,6 +23,8 @@ def fetch_and_print_posts():
         # printing only the field 'title'
         for post in fetched_data:
             print(post['title'])
+    else:
+        print("Failed to fetch posts, Status Code: ", response.status_code)
 
 
 def fetch_and_save_posts():
@@ -30,7 +32,7 @@ def fetch_and_save_posts():
 
     if response.status_code == 200:
         fetched_data = response.json()
-        
+
         # structure data into a list of dictionaries
         title_list = []
         for item in fetched_data:
@@ -42,9 +44,12 @@ def fetch_and_save_posts():
             title_list.append(titles)
         print(title_list)
 
-    # write into CSV file called posts.csv
-    field_names = ['id', 'title', 'body']
-    with open('posts.csv', 'w', newline='') as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=field_names)
-        writer.writeheader()
-        writer.writerows(title_list)
+        # write into CSV file called posts.csv
+        field_names = ['id', 'title', 'body']
+        with open('posts.csv', 'w', newline='') as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=field_names)
+            writer.writeheader()
+            writer.writerows(title_list)
+
+    else:
+        print("Failed to fetch posts, Status Code: ", response.status_code)
