@@ -1,2 +1,2 @@
 -- 6. List all in table
-SHOW first_table;
+SELECT * FROM first_table;
