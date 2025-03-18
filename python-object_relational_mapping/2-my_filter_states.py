@@ -13,7 +13,7 @@ if __name__ == "__main__":
     )
     cur = db.cursor()
     user_input_state_name = sys.argv[4]
-    cur.execute("SELECT * FROM states WHERE name = '{}'\
+    cur.execute("SELECT * FROM states WHERE BINARY name = '{}'\
         ORDER BY id".format(user_input_state_name))
     rows = cur.fetchall()
     for r in rows:
