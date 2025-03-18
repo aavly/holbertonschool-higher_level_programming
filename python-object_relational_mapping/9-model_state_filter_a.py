@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 8. First State """
+""" 9. Contains `a` """
 
 from sys import argv
 from sqlalchemy import create_engine
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = Session()
 
     # query all states and order by id
-    states = session.query(State).filter(State.name.like('%n%')).\
+    states = session.query(State).filter(State.name.like('%a%')).\
         order_by(State.id)
 
     # print results
