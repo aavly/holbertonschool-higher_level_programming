@@ -13,7 +13,6 @@ if __name__ == "__main__":
     )
     cur = db.cursor()
 
-    # PARAMETISED QUERIES TO PROJECT FROM SQL INJECTIONS
     query = """
         SELECT cities.id, cities.name, states.name
         FROM cities
