@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""0. Get all states """
 
 import MySQLdb
 import sys
