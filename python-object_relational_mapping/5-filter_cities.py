@@ -13,20 +13,19 @@ if __name__ == "__main__":
     )
     cur = db.cursor()
 
-	# PARAMETISED QUERIES TO PROJECT FROM SQL INJECTIONS
     user_input_state_name = sys.argv[4]
 
     query = """
         SELECT cities.name
         FROM cities
         JOIN states ON cities.state_id = states.id
+        WHERE BINARY states.name = %s
         ORDER BY cities.id
     """
 
     cur.execute(query, (user_input_state_name,))
-
     rows = cur.fetchall()
-    for r in rows:
-        print(r)
+    print(", ".join(row[0] for row in rows))
+
     cur.close()
     db.close()
