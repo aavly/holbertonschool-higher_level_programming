@@ -18,11 +18,13 @@ if __name__ == "__main__":
     session = Session()
 
     # query all states and order by id
-    states = session.query(State).order_by(State.id).first()
+    state = session.query(State).order_by(State.id).first()
 
     # print results
-    for state in states:
+    if state:
         print(f"{state.id}: {state.name}")
+    else:
+        print("Nothing")
 
     # close session
     session.close()
