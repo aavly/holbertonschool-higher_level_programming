@@ -14,7 +14,12 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # PARAMETISED QUERIES TO PROJECT FROM SQL INJECTIONS
-    query = "SELECT * FROM states ORDER BY id"
+    query = """
+        SELECT cities.id, cities.name, states.name
+        FROM cities
+        JOIN states ON cities.state_id = states.id
+        ORDER BY cities.id
+    """
     cur.execute(query)
     rows = cur.fetchall()
     for r in rows:
