@@ -12,11 +12,10 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cur = db.cursor()
-    user_input_state_name = sys.argv[4]
 
     # PARAMETISED QUERIES TO PROJECT FROM SQL INJECTIONS
     query = "SELECT * FROM states ORDER BY id"
-    cur.execute(query, (user_input_state_name,))
+    cur.execute(query)
     rows = cur.fetchall()
     for r in rows:
         print(r)
