@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Creating a Simple Templating Program"""
 
+import os
 
 def generate_invitations(template, attendees):
     """
@@ -31,18 +32,24 @@ def generate_invitations(template, attendees):
         event_date = person.get("event_date", "N/A") or "N/A"
         event_location = person.get("event_location", "N/A") or "N/A"
             
-    # Making the personalised invitations
-    invitation = template.format (
-        name=name,
-        event_title=event_title,
-        event_date=event_date,
-        event_location=event_location
-    )
-    
-    # Generate Output files
-    output_filename = f"output_{index}.txt"
-    with open(output_filename, "w") as f:
-        f.write(invitation)
+        # Making the personalised invitations
+        invitation = template.replace("{name}", name) \
+                        .replace("{event_title}", event_title) \
+                        .replace("{event_date}", event_date) \
+                        .replace("{event_location}", event_location)
+        
+        # Generate Output files
+        output_filename = f"output_{index}.txt"
+        
+        if os.path.exists(output_filename):
+            print(f"ERROR: {output_filename} already exists")
+            continue
+
+        try:
+            with open(output_filename, "w") as f:
+                f.write(invitation)
+        except IOError as e:
+                print(f"ERROR: Failed to write to {output_filename}. Error : {e}")
         
         
 # Testing program
