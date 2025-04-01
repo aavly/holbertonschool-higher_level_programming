@@ -51,19 +51,23 @@ def read_csv(file_path):
     
 @app.route('/products_display')
 def products():
+    # using request.args.get to get query arguements and assign to variables 
     source = request.args.get('source')
     product_id = request.args.get('id')
     
+    # determining what file type is entered as an arguement, then setting products accordingly
     if source == 'json':
         file_path = 'products.json'
+        products = read_json(file_path)
     elif source == 'csv':
         file_path = 'products.csv'
+        products = read_csv(file_path)
     else:
         return render_template('products_display.html', error="Invalid file format")
     
     if not os.path.exists(file_path):
         return render_template('products_display.html', error="File not found")
-        
+    
     if product_id:
         product_id = int(product_id)
         # BELOW - if p for a product in products has its id matched with the product_id requested in the parameter...
