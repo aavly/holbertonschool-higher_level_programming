@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Products Display</title>
+</head>
+
+<body>
+	<h1>Products Display</h1>
+	<!-- using jinja, add an if error condition here with the error shown-->
+	{% if error %}
+		{{error}}
+
+	<!-- displaying data in a table format -->
+	 <table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Category</th>
+			<th>Price</th>
+		</tr>
+
+		{% for product in products %}
+		<tr>
+			<td>{{product.id%}}</td>
+			<td>{{product.name%}}</td>
+			<td>{{product.category%}}</td>
+			<td>{{product.price%}}</td>
+		</tr>
+		{% endfor %}
+	 </table>
+	{% endif %}
+
+</body>
+</html>
