@@ -55,26 +55,37 @@ def products():
     source = request.args.get('source')
     product_id = request.args.get('id')
     
-    # determining what file type is entered as an arguement, then setting products accordingly
+    # determining what file type is entered as an argument, then setting products accordingly
     if source == 'json':
         file_path = 'products.json'
-        products = read_json(file_path)
     elif source == 'csv':
         file_path = 'products.csv'
-        products = read_csv(file_path)
     else:
-        return render_template('product_display.html', error="Invalid file format")
+        return render_template('product_display.html', error="Invalid file format. Only JSON and CSV accepted")
     
+    #checking if file exists
     if not os.path.exists(file_path):
         return render_template('product_display.html', error="File not found")
     
+    try:
+        if source == 'json':
+            products = read_json(file_path)
+        else:
+            products = read_csv(file_path)
+    except Exception:
+        return render_template('product_display.html', error="Error reading file")
+
     if product_id:
-        product_id = int(product_id)
-        # BELOW - if p for a product in products has its id matched with the product_id requested in the parameter...
-        # then set it to the variable products (which is to be used later on when returning the rendered template)
-        products = [p for p in products if p['id'] == product_id]
-        if not products:
-            return render_template('product_display.html', error="Product not found")
+        try:
+            product_id = int(product_id)
+            # BELOW - if p for a product in products has its id matched with the product_id requested in the parameter...
+            # then set it to the variable products (which is to be used later on when returning the rendered template)
+            found_products = [p for p in products if p['id'] == product_id]
+            if not found_products:
+                return render_template('product_display.html', error="Product not found")
+            return render_template('product_display.html', products=found_products)
+        except ValueError:
+            return render_template('product_display.html',error="Error: Product ID must be an integer")
         
     return render_template('product_display.html', products=products)
 
