@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Items List</title>
+</head>
+
+<body>
+	<h1>Items List</h1>
+
+	<!-- this template should include a loop to iterate over a list of items and display each item-->
+	{% if items %}
+		<!-- ** items displayed as an UNORDERED list -->
+		<ul>
+			{% for item in items %}
+				<li>{{item}}</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+			<p>Item list is empty</p>
+		{% endif %}
+
+</body>
+</html>
