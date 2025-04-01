@@ -63,10 +63,10 @@ def products():
         file_path = 'products.csv'
         products = read_csv(file_path)
     else:
-        return render_template('products_display.html', error="Invalid file format")
+        return render_template('product_display.html', error="Invalid file format")
     
     if not os.path.exists(file_path):
-        return render_template('products_display.html', error="File not found")
+        return render_template('product_display.html', error="File not found")
     
     if product_id:
         product_id = int(product_id)
