@@ -61,7 +61,7 @@ def products():
     elif source == 'csv':
         file_path = 'products.csv'
     else:
-        return render_template('product_display.html', error="Invalid file format. Only JSON and CSV accepted")
+        return render_template('product_display.html', error="Wrong source")
     
     #checking if file exists
     if not os.path.exists(file_path):
