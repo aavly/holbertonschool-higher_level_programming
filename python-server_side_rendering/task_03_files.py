@@ -49,7 +49,7 @@ def read_csv(file_path):
             products.append(row)
     return products
     
-@app.route('/products_display')
+@app.route('/products')
 def products():
     # using request.args.get to get query arguements and assign to variables 
     source = request.args.get('source')
@@ -76,7 +76,8 @@ def products():
         if not products:
             return render_template('product_display.html', error="Product not found")
         
-        return render_template('product_display.html', products=products)
+    return render_template('product_display.html', products=products)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
