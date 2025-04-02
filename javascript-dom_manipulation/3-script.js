@@ -1,25 +1,16 @@
+// ***
 // toggles class of header element when id #toggle_header clicked
 
-toggle_headerrr = document.getElementById("toggle_header");
-headerrr = document.querySelector("header");
+hdr = document.querySelector("header");
+hdr_with_id = document.getElementById("toggle_header");
 
-// trying out a different method where function is defined beforehand
-function toggle_class_of_header() {
-	if (headerrr.className == "red") {
-		headerrr.classList.toggle("green");
+hdr_with_id.addEventListener("click", function() {
+	if (hdr.classList.contains("red")) {
+		hdr.classList.toggle("red");
+		hdr.classList.add("green");
 	}
 	else {
-		headerrr.classList.toggle("red");
+		hdr.classList.remove("green");
+		hdr.classList.add("red");
 	}
-}
-// 	if (headerrr.className == "red") {
-// 		headerrr.classList.toggle("red");
-// 		headerrr.classList.add("green");
-// 	}
-// 	else if (headerrr.className == "green") {
-// 		headerr.classList.toggle("green");
-// 		headerr.classList.add("red");
-// 	}
-// }
-
-toggle_headerrr.addEventListener("click", toggle_class_of_header());
+});
